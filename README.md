@@ -1,1 +1,33 @@
-automation-scripts
+# automation-scripts
+Scripts I developed during my work at the Ehud Cohen lab, which automated some
+of the processes that surround wet-lab research, literature review, and
+analysis.
+
+# Contents
+## convert-lifespan-to-GraphPad
+When monitoring the lifespans of *C. elegans*, the usual format is to log for
+each timepoint the number of censored, dead, and alive animals.
+Yet the statistical plotting software GraphPad Prism, which is used to test and
+plot the survival of the animals, takes in as input one animal per row, with an
+indication of whether it is dead (1) or censored (0) (detailed instructions in
+the software documentation).  
+To convert between the manual input format and the required GraphPad Prism
+format, one can input (or copy from any spreadsheet software) the measurements
+of the animals survival into the file `lifespanTemplatePasteDataHere.csv`
+according to the example data already present in the file. The four columns are:
+Day	# | Missing	# | dead | treatment
+After saving the csv file, can run the script `lifespanFormatToGraphPad.py` in
+the terminal:
+```
+python lifespanFormatToGraphPad.py
+```
+or
+```
+py lifespanFormatToGraphPad.py
+```
+The converted data will be saved in the file `lifespanReformattedOutput.csv`,
+which can be transferred to GraphPad Prism.
+
+## convert-paralysis-to-GraphPad
+Mostly the same as the lifespan case above, but with an adjustment to the
+order of the variables. In the output file 1 is paralyzed.
