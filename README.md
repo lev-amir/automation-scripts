@@ -15,9 +15,10 @@ To convert between the manual input format and the required GraphPad Prism
 format, one can input (or copy from any spreadsheet software) the measurements
 of the animals survival into the file `lifespanTemplatePasteDataHere.csv`
 according to the example data already present in the file. The four columns are:
-| Day	#     | Missing	#     | dead | treatment |
+
+| Day	#          | Missing	#     | dead           | treatment      |
 | :------------- | :------------- | :------------- | :------------- |
-| 5       | 2       | 3 | EV
+| 5              | 2              | 3              | EV             |
 
 After saving the csv file, can run the script `lifespanFormatToGraphPad.py` in
 the terminal:
@@ -49,4 +50,21 @@ python CompareGenes.py
 or
 ```
 py CompareGenes.py
+```
+## pubmed-journal-search-terms
+Helper function that converts a list of journal to the search-term format that
+PubMed takes it. This was done in order to search for search terms only in a
+range of specific journals.
+
+**Example**
+Input:
+```
+Aging Cell
+Ageing Research Reviews
+Journals of Gerontology - Series A Biological Sciences and Medical Sciences
+Neurobiology of Aging
+```
+Output:
+```
+"Aging Cell"[ta] OR "Ageing Research Reviews"[ta] OR "J Gerontol A Biol Sci Med Sci"[ta] OR "Neurobiology of Aging"[ta]
 ```
