@@ -15,7 +15,10 @@ To convert between the manual input format and the required GraphPad Prism
 format, one can input (or copy from any spreadsheet software) the measurements
 of the animals survival into the file `lifespanTemplatePasteDataHere.csv`
 according to the example data already present in the file. The four columns are:
-Day	# | Missing	# | dead | treatment
+| Day	#     | Missing	#     | dead | treatment |
+| :------------- | :------------- | :------------- | :------------- |
+| 5       | 2       | 3 | EV
+
 After saving the csv file, can run the script `lifespanFormatToGraphPad.py` in
 the terminal:
 ```
@@ -31,3 +34,19 @@ which can be transferred to GraphPad Prism.
 ## convert-paralysis-to-GraphPad
 Mostly the same as the lifespan case above, but with an adjustment to the
 order of the variables. In the output file 1 is paralyzed.
+
+## cross-ref-lists
+A multi-phrase search function. I found myself in need of crossing between two
+sources of gene lists. Usually I had a clean list of genes and I needed to find
+which of these genes are present in a table or a web-page, etc. This script
+takes in a clean list of phrases (e.g. genes) `MyGenes.txt` and a messy
+copy-pasted text from whatever source the list needs to be crossed with
+`ScreenList.txt`, and returns the phrases that exist in both of the text files.
+To get the results run in the terminal:
+```
+python CompareGenes.py
+```
+or
+```
+py CompareGenes.py
+```
